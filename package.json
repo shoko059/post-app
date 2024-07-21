@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'; stylelint 'src/**/*.{css,jsx,tsx}'; cd functions/ && eslint 'src/**/*.{js,ts}'",
-    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'; stylelint --fix 'src/**/*.{css,jsx,tsx}'; cd functions/ && eslint --fix 'src/**/*.{js,ts}'",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "prepare": "husky"
   },
   "dependencies": {
@@ -52,7 +51,7 @@
     ],
     "src/*.{js,jsx,ts,tsx}": [
       "eslint",
-      "eslint:fix"
+      "eslint --fix"
     ]
   }
 }
