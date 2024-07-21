@@ -1,0 +1,32 @@
+{
+  // See http://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
+  // Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+
+  // List of extensions which should be recommended for users of this workspace.
+  "recommendations": [
+    // インポートのパスを自動補完してくれる
+    "christian-kohler.path-intellisense",
+    //  JavaScript の静的コード解析ツール ESLint を VS Code に統合する
+    "dbaeumer.vscode-eslint",
+    //  Git のコミット履歴を見やすく表示してくれる
+    "donjayamanne.githistory",
+    // コード自動整形ツール Prettier を VS Code に統合する
+    "esbenp.prettier-vscode",
+    // HTML/XML の開きタグ閉じタグどちらかの要素名を変更すると、対応するタグも同期してくれる
+    "formulahendry/vscode-auto-rename-tag",
+    // JSON オブジェクトを TypeScript のインターフェースに変換してくれる
+    "MariusAlchimavicius.json-to-ts",
+    // インデントの階層を色分けして見やすくしてくれる
+    "oderwat.indent-rainbow",
+    // CSS 用のリンター stylelint を VS Code に統合する
+    "stylelint.vscode-stylelint",
+    //  AI 支援によりコード補完の精度を向上させる
+    "VisualStudioExptTeam.vscodeintellicode",
+    // 左ペインの Explorer のファイルアイコンをバリエーション豊かにしてくれる
+    "vscode-icons-team.vscode-icons",
+    // モジュールをインポートしている文の横に、算出したバンドルサイズを表示してくれる
+    "wix.vscode-import-cost"
+  ],
+  // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
+  "unwantedRecommendations": []
+}
