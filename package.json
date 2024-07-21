@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'; stylelint 'src/**/*.{css,jsx,tsx}'; cd functions/ && eslint 'src/**/*.{js,ts}'",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'; stylelint --fix 'src/**/*.{css,jsx,tsx}'; cd functions/ && eslint --fix 'src/**/*.{js,ts}'",
-    "precommit": "lint-staged"
+    "prepare": "husky"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -43,23 +43,16 @@
     "typescript": "^5.2.2",
     "vite": "^5.3.1"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "git add"
+    "*": [
+      "prettier --ignore-unknown --write"
     ],
-    "src/**/*.{css,jsx,tsx}": [
-      "stylelint --fix",
-      "git add"
+    "*.{css,jsx,tsx}": [
+      "stylelint"
     ],
-    "functions/src/**/*.{js,ts}": [
-      "cd functions/ && eslint --fix",
-      "git add"
+    "*.{js,jsx,ts,tsx}": [
+      "eslint",
+      "eslint:fix"
     ]
   }
 }

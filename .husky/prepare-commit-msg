@@ -1,0 +1,13 @@
+#! /usr/bin/env bash
+
+# The third example adds a Signed-off-by line to the message, that can
+# still be edited.  This is rarely a good idea.
+
+ARGS=($1)
+COMMIT_MSG_FILE=${ARGS[0]}
+
+/usr/bin/perl -i.bak -ne 'print unless(m/^. Please enter the commit message/..m/^#$/)' "$COMMIT_MSG_FILE"
+
+if ! grep -q "\[skip ci\]" ${COMMIT_MSG_FILE}; then
+  echo "[skip ci]" >> ${COMMIT_MSG_FILE}
+fi
