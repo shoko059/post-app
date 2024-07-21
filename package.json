@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'; stylelint 'src/**/*.{css,jsx,tsx}'; cd functions/ && eslint 'src/**/*.{js,ts}'",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'; stylelint --fix 'src/**/*.{css,jsx,tsx}'; cd functions/ && eslint --fix 'src/**/*.{js,ts}'",
     "precommit": "lint-staged"
   },
   "dependencies": {
@@ -15,6 +16,9 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@types/eslint": "~8.56.10",
+    "@types/eslint-config-prettier": "~6.11.3",
+    "@types/lint-staged": "~13.3.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
@@ -22,12 +26,20 @@
     "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^9.7.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
     "husky": "^9.1.1",
     "lint-staged": "^15.2.7",
     "prettier": "3.3.3",
+    "prettier-stylelint": "^0.4.2",
+    "stylelint": "^16.7.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-order": "^6.0.4",
+    "stylelint-processor-styled-components": "^1.10.0",
     "typescript": "^5.2.2",
     "vite": "^5.3.1"
   },
